@@ -1,0 +1,6 @@
+C:\Users\Filipe\RiderProjects\Matrix4\MatrixAll\bin\Debug\MatrixAll.dll
+C:\Users\Filipe\RiderProjects\Matrix4\MatrixAll\bin\Debug\MatrixAll.pdb
+C:\Users\Filipe\RiderProjects\Matrix4\MatrixAll\obj\Debug\MatrixAll.csprojAssemblyReference.cache
+C:\Users\Filipe\RiderProjects\Matrix4\MatrixAll\obj\Debug\MatrixAll.csproj.CoreCompileInputs.cache
+C:\Users\Filipe\RiderProjects\Matrix4\MatrixAll\obj\Debug\MatrixAll.dll
+C:\Users\Filipe\RiderProjects\Matrix4\MatrixAll\obj\Debug\MatrixAll.pdb
