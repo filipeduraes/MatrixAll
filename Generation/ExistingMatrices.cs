@@ -13,7 +13,6 @@ namespace MatrixAll.Generation
                 throw new IllegalArgumentException(IllegalTypes.MatrixNotSquare);
 
             return null;
-            //return NewMatrices.GenerateIdentityMatrix(m) / a;
         }
 
         public static Matrix GenerateTransposeMatrix(Matrix a)
