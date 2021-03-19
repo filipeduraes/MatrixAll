@@ -1,23 +1,22 @@
 ﻿using System;
+using MatrixAll.Exceptions;
 
 namespace MatrixAll.Operations
 {
     public static class MatrixPow
     {
-        public static Matrix PowMatrix(Matrix a, float value)
+        public static Matrix PowMatrix(Matrix a, int value)
         {
-            int m = a.M;
-            int n = a.N;
-            
-            float[,] c = new float[m, n];
-            
-            for (int i = 0; i < m; i++)
-            {
-                for (int j = 0; j < n; j++)
-                    c[i, j] = (float) Math.Pow(a[i, j], value);
-            }
+            if (!a.IsSquare) throw new IllegalArgumentException(IllegalTypes.MatrixNotSquare);
+            if (value == 0) return Matrix.Identity(a.M);
 
-            return new Matrix(c);
+            Matrix c = PowMatrix(a, value / 2);
+            
+            if (value % 2 == 0)
+                return c * c;
+            
+            Matrix b = c * c;
+            return a * b;
         }
     }
 }

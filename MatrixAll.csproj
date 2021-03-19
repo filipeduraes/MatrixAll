@@ -38,10 +38,10 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Exceptions\IllegalArgumentException.cs" />
         <Compile Include="Generation\ExistingMatrices.cs" />
         <Compile Include="Generation\NewMatrices.cs" />
         <Compile Include="Matrix.cs" />
-        <Compile Include="Operations\MatrixDivision.cs" />
         <Compile Include="Operations\MatrixMultiplication.cs" />
         <Compile Include="Operations\MatrixPow.cs" />
         <Compile Include="Operations\MatrixSubtraction.cs" />

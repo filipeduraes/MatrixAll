@@ -1,4 +1,4 @@
-﻿using System;
+﻿using MatrixAll.Exceptions;
 
 namespace MatrixAll.Generation
 {
@@ -10,9 +10,10 @@ namespace MatrixAll.Generation
             int n = a.N;
 
             if (m != n)
-                return null;
+                throw new IllegalArgumentException(IllegalTypes.MatrixNotSquare);
 
-            return NewMatrices.GenerateIdentityMatrix(m) / a;
+            return null;
+            //return NewMatrices.GenerateIdentityMatrix(m) / a;
         }
 
         public static Matrix GenerateTransposeMatrix(Matrix a)

@@ -7,6 +7,7 @@ namespace MatrixAll
     {
         public int M {get;}
         public int N {get;}
+        public bool IsSquare => M == N;
 
         public delegate float FormationLaw(int i, int j);
         
@@ -60,10 +61,7 @@ namespace MatrixAll
         public static Matrix operator -(float value, Matrix a) => MatrixSubtraction.SubtractMatrixAndFloat(value, a);
         public static Matrix operator -(Matrix a) => MatrixSubtraction.NegateMatrix(a);
 
-        public static Matrix operator /(Matrix a, Matrix b) => MatrixDivision.DivideMatrices(a, b);
-        public static Matrix operator /(Matrix a, float value) => MatrixDivision.DivideMatrixAndFloat(a, value);
-        
-        public static Matrix operator ^(Matrix a, float value) => MatrixPow.PowMatrix(a, value);
+        public static Matrix operator ^(Matrix a, int value) => MatrixPow.PowMatrix(a, value);
         #endregion
     }
 }

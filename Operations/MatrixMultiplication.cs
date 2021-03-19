@@ -1,11 +1,13 @@
-﻿namespace MatrixAll.Operations
+﻿using MatrixAll.Exceptions;
+
+namespace MatrixAll.Operations
 {
     public static class MatrixMultiplication
     {
         public static Matrix MultiplyMatrices(Matrix a, Matrix b)
         {
             if(a.M != b.N || a.N != b.M)
-                return null;
+                throw new IllegalArgumentException(IllegalTypes.MatrixNotAbleToMultiply);
 		
             int m = a.M;
             int n = b.N;
