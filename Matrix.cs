@@ -3,7 +3,7 @@ using MatrixAll.Generation;
 
 namespace MatrixAll
 {
-    public class Matrix
+    public struct Matrix
     {
         public int M {get;}
         public int N {get;}

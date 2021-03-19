@@ -1,11 +1,13 @@
-﻿namespace MatrixAll.Operations
+﻿using MatrixAll.Exceptions;
+
+namespace MatrixAll.Operations
 {
     public static class MatrixSum
     {
         public static Matrix SumMatrices(Matrix a, Matrix b)
         {
             if (a.M != b.M || a.N != b.N)
-                return null;
+                throw new IllegalArgumentException(IllegalTypes.MatricesNotEqual);
 
             float[,] c = new float[a.M, a.N];
             
