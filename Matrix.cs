@@ -40,6 +40,7 @@ namespace MatrixAll
         public static Matrix Identity(int order) => NewMatrices.GenerateIdentityMatrix(order);
         public Matrix Inverse() => ExistingMatrices.GenerateInverseMatrix(this);
         public Matrix Transpose() => ExistingMatrices.GenerateTransposeMatrix(this);
+        public float Determinant() => ExistingMatrices.GetDeterminant(this);
         
         #region Operators
         public float this[int i, int j]
