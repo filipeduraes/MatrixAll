@@ -31,53 +31,35 @@ namespace MatrixAll.Generation
 
         public static float GetDeterminant(Matrix a)
         {
-            if (!a.IsSquare)
+            Matrix upperTriangularA = a.ToUpperTriangular();
+            
+            float result = 1f;
+            for(int i = 0; i < upperTriangularA.M; i++)
+                result *= upperTriangularA[i, i];
+            		
+            return result;
+        }
+        
+        public static Matrix ConvertToUpperTriangular(Matrix a)
+        {
+	        if(!a.IsSquare)
                 throw new IllegalArgumentException(IllegalTypes.MatrixNotSquare);
-            
-            int p = 1;
-            int order = a.N;
-            Matrix b = a;
-            
-            for (int k = 0; k < order - 1; k++)
-            {
-                float max = Math.Abs(b[k, k]);
-                int maxIndex = k;
-
-                for (int i = k + 1; i < order; i++)
-                {
-                    if (!(max < Math.Abs(b[i, k]))) continue;
-                    max = Math.Abs(b[i, k]);
-                    maxIndex = i;
-                }
-
-                if (maxIndex != k)
-                {
-                    p *= -1;
-                    for (int j = 0; j < order; j++)
-                    {
-                        float temp = a[k, j];
-                        b[k, j] = b[maxIndex, j];
-                        b[maxIndex, j] = temp;
-                    }
-                }
-
-                if (a[k, k] == 0f)
-                    return 0f;
                 
-                for (int m = k + 1; m < order; m++)
-                {
-                    float f = (-1) * b[m, k] / b[k, k];
-                    b[m, k] = 0f;
-                    for (int l = k + 1; l < order; l++)
-                        b[m, l] = b[m, l] + f * b[k, l];
-                }
-            }
-
-            float det = 1f;
-            for (int q = 0; q < order; q++)
-                det *= b[q, q];
-
-            return p * det;
+            Matrix b = a;
+        	int length = a.M;
+        	
+        	for(int k = 0; k < length; k++)
+        	{
+        		for(int i = k + 1; i < length; i++)
+        		{
+        			float multiplier = b[i, k] / b[k, k] * -1f;
+        			
+        			for(int j = k; j < length; j++)
+        				b[i, j] = multiplier * b[k, j] + b[i, j];
+        		}
+        	}
+        	
+        	return b;
         }
     }
 }

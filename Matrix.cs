@@ -38,6 +38,7 @@ namespace MatrixAll
 
         public static Matrix NullMatrix(int m, int n) => NewMatrices.GenerateNullMatrix(m, n);
         public static Matrix Identity(int order) => NewMatrices.GenerateIdentityMatrix(order);
+        public Matrix ToUpperTriangular() => ExistingMatrices.ConvertToUpperTriangular(this);
         public Matrix Inverse() => ExistingMatrices.GenerateInverseMatrix(this);
         public Matrix Transpose() => ExistingMatrices.GenerateTransposeMatrix(this);
         public float Determinant() => ExistingMatrices.GetDeterminant(this);
